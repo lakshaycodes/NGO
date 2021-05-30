@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="content is-large">
+    <h1> {{posts.title}} </h1>
+</div>
+<div class="content is-normal">
+    <h4>Posted on {{posts.date_added}}</h4>
+</div>
+
+<br>
+<div class="container is-large">
+    <h1><strong>{{posts.intro}}</strong></h1>
+</div>
+<br>
+{{posts.body}}
+
+{% endblock content %}

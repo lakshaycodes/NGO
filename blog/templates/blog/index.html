@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for post in posts %}
+<a href="{{post.slug}}">
+<div class="card">
+    <div class="card-content">
+    <div class="media">
+      
+      <div class="media-content">
+        <p class="title is-4">{{post.title}}</p>
+        <p class="subtitle is-6">By Care Of India</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{post.intro}}
+      <br>
+      <time datetime="2016-1-1">{{post.date_added}}</time>
+    </div>
+</div>
+<hr>
+</div>
+</a>
+  {% endfor %}
+{% endblock content %}

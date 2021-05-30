@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Of India</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@200&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                Care Of India
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        About Us
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/team">
+                            Our Team
+                        </a>
+                        <a class="navbar-item" href="/gallery">
+                            Gallery
+                        </a>
+
+                    </div>
+                </div>
+                <a class="navbar-item" href="/blog">
+                    Blog
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Contribute
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/donate">
+                            Donate
+                        </a>
+                        <a class="navbar-item" href="/volunteer">
+                            Volunteer
+                        </a>
+
+                    </div>
+                </div>
+                <a class="navbar-item" href="/contact">
+                    Contact Us
+                </a>
+            </div>
+
+
+        </div>
+    </nav>
+    <style>
+        .section {
+            padding: 0px 0px 0px 0px;
+        }
+    </style>
+    <section class="section">
+        <div class="container">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </section>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+
+    });
+</script>
+
+</html>
